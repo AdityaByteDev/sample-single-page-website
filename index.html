@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Ernest Dio - GRC Executive &amp; Thought Leader | Governance, Risk &amp; Compliance</title>
+    <meta content="Ernest Dio is a Governance, Risk &amp; Compliance (GRC) Executive and Thought Leader. Explore insights on risk management, compliance frameworks, and governance strategies." name="description"/>
+    <meta content="Ernest Dio, GRC, Governance Risk Compliance, Risk Management, Compliance, Thought Leader, Speaker" name="keywords"/>
+    <meta content="Ernest Dio" name="author"/>
+
+    <!-- Open Graph / Facebook -->
+    <meta content="website" property="og:type"/>
+    <meta content="https://ernestdio.com" property="og:url"/>
+    <meta content="Ernest Dio - GRC Executive &amp; Thought Leader" property="og:title"/>
+    <meta content="Explore insights on governance, risk management, and compliance from industry expert Ernest Dio." property="og:description"/>
+
+    <!-- Twitter -->
+    <meta content="summary_large_image" name="twitter:card"/>
+    <meta content="Ernest Dio - GRC Executive &amp; Thought Leader" name="twitter:title"/>
+    <meta content="Governance, Risk &amp; Compliance insights and thought leadership." name="twitter:description"/>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Lato:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+
+    <style>
+        :root {
+            --navy: #0A1F44;
+            --gold: #CDA434;
+            --light-gray: #F5F6FA;
+            --white: #FFFFFF;
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+            color: var(--navy);
+            overflow-x: hidden;
+        }
+
+        /* Background Animation */
+        .bg-animation {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: linear-gradient(135deg, var(--navy) 0%, #1a3a5f 100%);
+            overflow: hidden;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(205,164,52,0.1) 0%, transparent 70%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(120deg); }
+            66% { transform: translate(-20px, 20px) rotate(240deg); }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 400;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--navy);
+            transition: var(--transition);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, var(--navy) 0%, #1a3a5f 100%);
+            color: var(--white);
+            position: relative;
+            margin-top: 0;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            margin-bottom: 1rem;
+            animation: slideInFromTop 1s ease;
+        }
+
+        @keyframes slideInFromTop {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            animation: slideInFromBottom 1s ease 0.3s both;
+        }
+
+        @keyframes slideInFromBottom {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            animation: fadeIn 1s ease 0.6s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 0.9; }
+        }
+
+        .cta-container {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            animation: fadeIn 1s ease 0.9s both;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition);
+            display: inline-block;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--white);
+            color: var(--navy);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--navy);
+        }
+
+        /* About Section */
+        .about {
+            background: var(--light-gray);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            animation: slideInFromLeft 0.8s ease;
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .about-image {
+            text-align: center;
+            animation: slideInFromRight 0.8s ease;
+        }
+
+        @keyframes slideInFromRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .about-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .about-image img:hover {
+            transform: scale(1.05);
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--gold);
+            margin: 2rem 0;
+            padding-left: 2rem;
+            border-left: 3px solid var(--gold);
+        }
+
+        /* Articles Section */
+        .articles {
+            background: var(--white);
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .article-card {
+            background: var(--light-gray);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: var(--transition);
+            animation: fadeInScale 0.8s ease;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .article-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .article-header {
+            background: var(--gold);
+            color: var(--white);
+            padding: 1.5rem;
+        }
+
+        .article-content {
+            padding: 1.5rem;
+        }
+
+        /* Speaking Section */
+        .speaking {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .speaking-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .topic-tag {
+            background: rgba(255,255,255,0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .topic-tag:hover {
+            background: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        /* Foundation Section */
+        .foundation {
+            background: var(--light-gray);
+        }
+
+        .foundation-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--white);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-form {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Lato', sans-serif;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(205,164,52,0.1);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: var(--navy);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--gold);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .about-content,
+            .foundation-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-container {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Scroll animations */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .scroll-animate.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+    
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">Ernest Dio</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#articles">Articles</a></li>
+                <li><a href="#speaking">Speaking</a></li>
+                <li><a href="#foundation">Foundation</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Ernest Dio</h1>
+        <p class="subtitle">GRC Executive &amp; Thought Leader</p>
+        <p class="tagline">Transforming Organizations Through Strategic Governance, Risk Management &amp; Compliance</p>
+        <div class="cta-container">
+            <a class="btn btn-primary" href="#contact">Connect With Me</a>
+            <a class="btn btn-secondary" href="#articles">Read My Insights</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2 class="section-title scroll-animate">About Ernest</h2>
+        <div class="about-content">
+            <div class="about-text scroll-animate">
+                <p>With over 20 years of experience in Governance, Risk &amp; Compliance, I have dedicated my career to helping organizations navigate complex regulatory landscapes while building resilient, ethical business practices.</p>
+                <p class="quote">"Effective GRC isn't just about compliance—it's about creating sustainable value through strategic risk management and ethical leadership."</p>
+                <p>My expertise spans across financial services, healthcare, and technology sectors, where I've implemented comprehensive GRC frameworks that have saved organizations millions while enhancing their reputation and stakeholder trust.</p>
+                <a class="btn btn-primary" href="#" style="margin-top: 1rem;">Download Resume</a>
+            </div>
+            <div class="about-image scroll-animate">
+                <img alt="Ernest Dio" src="https://via.placeholder.com/400x500/0A1F44/CDA434?text=Ernest+Dio"/>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section class="articles" id="articles">
+        <h2 class="section-title scroll-animate">Articles &amp; Insights</h2>
+        <div class="articles-grid">
+            <div class="article-card scroll-animate">
+                <div class="article-header">
+                    <h3>The Future of GRC in Digital Transformation</h3>
+                </div>
+                <div class="article-content">
+                    <p>Exploring how emerging technologies are reshaping governance, risk, and compliance frameworks in the digital age.</p>
+                    <a class="btn btn-primary" href="#" style="margin-top: 1rem;">Read on LinkedIn</a>
+                </div>
+            </div>
+            <div class="article-card scroll-animate">
+                <div class="article-header">
+                    <h3>Building a Risk-Aware Culture</h3>
+                </div>
+                <div class="article-content">
+                    <p>Practical strategies for embedding risk awareness into organizational DNA and creating a culture of compliance.</p>
+                    <a class="btn btn-primary" href="#" style="margin-top: 1rem;">Read on Medium</a>
+                </div>
+            </div>
+            <div class="article-card scroll-animate">
+                <div class="article-header">
+                    <h3>ESG and the New Compliance Landscape</h3>
+                </div>
+                <div class="article-content">
+                    <p>Understanding the intersection of Environmental, Social, and Governance requirements with traditional compliance.</p>
+                    <a class="btn btn-primary" href="#" style="margin-top: 1rem;">Read on Forbes</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speaking Section -->
+    <section class="speaking" id="speaking">
+        <h2 class="section-title scroll-animate" style="color: white;">Speaking &amp; Leadership</h2>
+        <div class="speaking-content scroll-animate">
+            <p class="quote">"Inspiring leaders to see compliance not as a burden, but as a competitive advantage."</p>
+            <div class="topics">
+                <span class="topic-tag">GRC Strategy</span>
+                <span class="topic-tag">Risk Management</span>
+                <span class="topic-tag">Compliance Innovation</span>
+                <span class="topic-tag">Leadership Ethics</span>
+                <span class="topic-tag">Digital Governance</span>
+                <span class="topic-tag">Regulatory Technology</span>
+            </div>
+            <p style="margin: 2rem 0;">Available for keynote speeches, panel discussions, and corporate training sessions on governance, risk management, and compliance topics.</p>
+            <a class="btn btn-primary" href="#contact">Request Speaking Engagement</a>
+            <a class="btn btn-secondary" href="#" style="margin-left: 1rem;">Download Speaker Bio</a>
+        </div>
+    </section>
+
+    <!-- Foundation Section -->
+    <section class="foundation" id="foundation">
+        <h2 class="section-title scroll-animate">The Dio Foundation</h2>
+        <div class="foundation-content">
+            <div class="scroll-animate">
+                <p>The Dio Foundation is committed to advancing ethical leadership and governance practices in emerging markets. Through education, mentorship, and strategic partnerships, we work to build the next generation of principled leaders.</p>
+                <p>Our initiatives include scholarship programs for students pursuing careers in compliance and risk management, leadership development workshops, and community outreach programs focused on ethical business practices.</p>
+                <a class="btn btn-primary" href="#" style="margin-top: 2rem;">Visit Foundation Website</a>
+            </div>
+            <div class="scroll-animate">
+                <img alt="Dio Foundation" src="https://via.placeholder.com/500x300/F5F6FA/0A1F44?text=Dio+Foundation"/>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="section-title scroll-animate">Connect With Ernest</h2>
+        <div class="contact-content">
+            <div class="scroll-animate">
+                <h3>Get In Touch</h3>
+                <p>I'm always interested in connecting with fellow professionals, speaking opportunities, and media inquiries.</p>
+                <p><strong>Email:</strong> ernest@ernestdio.com</p>
+                <div class="social-links">
+                    <a aria-label="LinkedIn" href="#">in</a>
+                    <a aria-label="Twitter" href="#">tw</a>
+                    <a aria-label="Medium" href="#">M</a>
+                </div>
+            </div>
+            <div class="contact-form scroll-animate">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input id="name" name="name" required="" type="text"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" required="" type="email"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required="" rows="5"></textarea>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p> 2025 Ernest Dio. All rights reserved. | <a href="#" style="color: var(--gold);">Privacy Policy</a> | <a href="#" style="color: var(--gold);">Terms of Use</a></p>
+        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">Disclaimer: The views expressed on this website are my own and do not necessarily reflect those of any organization I am affiliated with.</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '100%';
+            navLinks.style.left = '0';
+            navLinks.style.width = '100%';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.background = 'white';
+            navLinks.style.padding = '2rem';
+            navLinks.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-animate').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255,255,255,0.98)';
+            } else {
+                navbar.style.background = 'rgba(255,255,255,0.95)';
+            }
+        });
+
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would typically send the data to your backend
+            console.log('Form submitted:', data);
+            
+            // Show success message
+            alert('Thank you for your message! I will get back to you soon.');
+            
+            // Reset form
+            e.target.reset();
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add parallax effect to hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+        });
+    </script>
+
+</body></html>
